@@ -30,6 +30,15 @@ app.use(cors({
 // ? Optionally for another logging package, winston can be used.  
 app.use(morgan("combined"));
 
+// Starting index
+app.get('/', (req, res) => {
+    res.status(200).json({
+        Started:{
+            message: "Only endpoint : /records"
+        }
+    })
+})
+
 /*
 * This function filters the records data
 * @param1: endDate => endDate from request.body
